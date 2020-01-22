@@ -9,14 +9,19 @@ export class WmsMapComponent implements OnInit {
 
   x: string;
   y: string;
-  
+
 
   constructor(private route: ActivatedRoute) {
 
 
+
     this.route.paramMap.subscribe(params => {
 
-      if(params.has('latitude') && params.has('longitude')){
+      if (params.has('latitude') && params.has('longitude')) {
+
+        if (isNaN(Number(params.get('latitude'))) === false) this.x = params.get('latitude');
+
+        if (isNaN(Number(params.get('longitude'))) === false) this.y = params.get('longitude');
 
       }
 
