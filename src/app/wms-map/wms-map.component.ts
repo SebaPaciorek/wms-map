@@ -9,16 +9,15 @@ export class WmsMapComponent implements OnInit {
 
   x: string;
   y: string;
-
+  
 
   constructor(private route: ActivatedRoute) {
 
 
     this.route.paramMap.subscribe(params => {
 
-      if (params.has('latitude') && params.has('longitude')) {
-        this.x = params.get('latitude');
-        this.y = params.get('longitude');
+      if(params.has('latitude') && params.has('longitude')){
+
       }
 
     });
