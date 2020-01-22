@@ -7,8 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WmsMapComponent implements OnInit {
 
-  x: string;
-  y: string;
+  x: Number;
+  y: Number;
 
 
   constructor(private route: ActivatedRoute) {
@@ -19,9 +19,9 @@ export class WmsMapComponent implements OnInit {
 
       if (params.has('latitude') && params.has('longitude')) {
 
-        if (isNaN(Number(params.get('latitude'))) === false) this.x = params.get('latitude');
+        if (isNaN(Number(params.get('latitude'))) === false) this.x = Number(params.get('latitude'));
 
-        if (isNaN(Number(params.get('longitude'))) === false) this.y = params.get('longitude');
+        if (isNaN(Number(params.get('longitude'))) === false) this.y = Number(params.get('longitude'));
 
       }
 
